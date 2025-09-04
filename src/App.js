@@ -5,17 +5,22 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-export default function App() {
+function App() {
   return (
-    <div className="bg-gray-50 text-gray-900">
+    <div className="font-sans">
       <Navbar />
-      <div id="hero"><Hero /></div>
-      <div id="about"><About /></div>
-      <div id="skills"><Skills /></div>
-      <div id="projects"><Projects /></div>
-      <div id="contact"><Contact /></div>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
+
+export default App;
+
 

@@ -1,32 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github, Mail, FileText } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white pt-16">
+    <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-white pt-16">
       <motion.h1
         className="text-5xl font-bold mb-4"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Peter Ndungu Mwaura
+        Joseph Malongo Lugaho
       </motion.h1>
 
       <p className="text-xl mb-6 max-w-xl">
         🚀 Aeronautical Engineering Student | Aspiring Aerospace Innovator | Passionate about aircraft design, propulsion systems, and computational simulations
       </p>
 
-      <motion.a
-        href="#contact"
-        className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 mb-6"
-        whileHover={{ scale: 1.05 }}
-      >
-        Get in Touch
-      </motion.a>
+      <div className="flex space-x-4 mb-6">
+        <motion.a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-blue-600 px-6 py-3 rounded-xl shadow-lg flex items-center space-x-2 hover:bg-gray-100 transition-all"
+          whileHover={{ scale: 1.05 }}
+        >
+          <FileText size={20} />
+          <span>Resume</span>
+        </motion.a>
 
-      {/* Social Links */}
+        <motion.a
+          href="#contact"
+          className="bg-white text-blue-600 px-6 py-3 rounded-xl shadow-lg hover:bg-gray-100 transition-all"
+          whileHover={{ scale: 1.05 }}
+        >
+          Contact Me
+        </motion.a>
+      </div>
+
       <div className="flex space-x-6">
         <motion.a
           href="https://www.linkedin.com/in/joseph-lugaho-52104814b/"
