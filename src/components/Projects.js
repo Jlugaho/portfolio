@@ -1,32 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
-    {
-      title: "Aircraft Wing CFD Analysis",
-      desc: "Performed aerodynamic simulations using ANSYS Fluent to optimize wing performance.",
-    },
-    {
-      title: "Drone Design Project",
-      desc: "Designed and built a functional quadcopter prototype for payload delivery.",
-    },
-    {
-      title: "Rocket Propulsion Study",
-      desc: "Analyzed liquid fuel propulsion efficiency for small-scale rockets.",
-    },
+    { name: "Aircraft Design Simulation", link: "#" },
+    { name: "Propulsion System Analysis", link: "#" },
+    { name: "CFD Study on Wing Aerodynamics", link: "#" },
   ];
 
   return (
-    <section className="py-16 px-6 max-w-5xl mx-auto" id="projects">
-      <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+    <motion.section
+      id="projects"
+      className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gray-100"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <h2 className="text-4xl font-bold mb-6 text-gray-800">Projects</h2>
       <div className="grid md:grid-cols-3 gap-6">
-        {projects.map((p, idx) => (
-          <div key={idx} className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl">
-            <h3 className="text-xl font-semibold mb-2">{p.title}</h3>
-            <p className="text-gray-600">{p.desc}</p>
-          </div>
+        {projects.map((project) => (
+          <motion.a
+            key={project.name}
+            href={project.link}
+            className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
+            whileHover={{ scale: 1.05 }}
+          >
+            {project.name}
+          </motion.a>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
+

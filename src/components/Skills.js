@@ -1,33 +1,31 @@
 import React from "react";
-import { Code, Wrench, Wind } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Skills() {
-  const skills = [
-    { name: "MATLAB / Python", level: 85, icon: <Code /> },
-    { name: "CATIA / SolidWorks", level: 80, icon: <Wrench /> },
-    { name: "Aerodynamics / CFD", level: 90, icon: <Wind /> },
-  ];
+  const skills = ["Aerodynamics", "Propulsion Systems", "CAD", "MATLAB", "CFD", "Python"];
 
   return (
-    <section className="py-16 bg-gray-100" id="skills">
-      <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-      <div className="max-w-3xl mx-auto space-y-6">
-        {skills.map((skill, idx) => (
-          <div key={idx} className="flex items-center gap-4">
-            <div className="text-blue-600">{skill.icon}</div>
-            <div className="flex-1">
-              <p className="font-semibold">{skill.name}</p>
-              <div className="w-full bg-gray-300 rounded-full h-3 mt-1">
-                <div
-                  className="bg-blue-600 h-3 rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
-            </div>
-            <span className="font-medium">{skill.level}%</span>
-          </div>
+    <motion.section
+      id="skills"
+      className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <h2 className="text-4xl font-bold mb-6 text-gray-800">Skills</h2>
+      <div className="flex flex-wrap justify-center gap-4">
+        {skills.map((skill) => (
+          <motion.div
+            key={skill}
+            className="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg shadow"
+            whileHover={{ scale: 1.1 }}
+          >
+            {skill}
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
+
