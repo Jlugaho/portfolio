@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full bg-white shadow-md z-50">
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
-        <div className="text-2xl font-bold text-blue-600">Joseph M. Lugaho</div>
+        <div className="text-2xl font-bold text-blue-600">Peter N. Mwaura</div>
 
         <ul className="hidden md:flex space-x-6">
           {navItems.map((item) => (

@@ -11,7 +11,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Joseph Malongo Lugaho
+        Peter Ndungu Mwaura
       </motion.h1>
 
       <p className="text-xl mb-6 max-w-xl">
